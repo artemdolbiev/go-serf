@@ -1,5 +1,2 @@
-node_modules/
-# IntellijIdea files
-yarn.lock
+node_modules
 package-lock.json
-.vscode/
