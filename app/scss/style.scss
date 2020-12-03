@@ -1,9 +1,13 @@
+@import "header";
+@import "global";
 @import "vars";
 @import "libs";
 @import "fonts";
 
-
-
-
+.slick-current {
+  .dots-box {
+    border-top: 4px solid $green;
+  }
+}
 
 @import "media";
