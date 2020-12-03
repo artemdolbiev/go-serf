@@ -1,5 +1,4 @@
 .header {
-
   &__slider {
 
     &-item {
@@ -15,8 +14,6 @@
     font-weight: 800;
     font-size: 200px;
     line-height: 156px;
-    text-transform: uppercase;
-    color: #ffffff;
     opacity: 0.07;
     max-width: 467px;
     position: absolute;
@@ -35,7 +32,6 @@
 
     border-right: 1px solid rgba(#ffffff, 0.25);
     height: 100vh;
-    color: #ffffff;
   }
 
   &__date {
@@ -67,6 +63,7 @@
     letter-spacing: 1.05px;
     position: relative;
     padding-left: 19px;
+    text-transform: capitalize;
 
     &::before {
       content: "";
@@ -78,6 +75,20 @@
       top: 0;
     }
   }
+
+  &__map {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+  }
+
+  &__arrows {
+    position: absolute;
+    left: 210px;
+    bottom: 30px;
+    z-index: 3;
+  }
 }
 
 .slider-item {
@@ -88,8 +99,6 @@
     right: 80px;
     bottom: 116px;
     text-align: right;
-    color: #ffffff;
-    text-transform: uppercase;
 
     &-suptitle {
       margin-bottom: 5px;
@@ -134,7 +143,6 @@
   bottom: 40px;
   max-width: 920px;
   width: 100%;
-  color: #ffffff;
   margin-top: -40px;
 }
 
@@ -156,13 +164,13 @@
   &__name {
     font-weight: 300;
     line-height: 19px;
+    text-transform: capitalize;
   }
 }
 
 .menu {
   padding-top: 40px;
   a {
-    color: #ffffff;
     span {
       display: block;
       font-weight: 500;
@@ -171,6 +179,19 @@
       letter-spacing: 3px;
       padding-top: 6px;
       margin-bottom: 20px;
+      text-transform: capitalize;
     }
+  }
+}
+
+.line-animation {
+  stroke-dashoffset: 600;
+  stroke-dasharray: 600;
+  animation: animdash 5s infinite 6s;
+}
+
+@keyframes animdash {
+  to {
+    stroke-dashoffset: 0;
   }
 }
