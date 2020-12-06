@@ -1,4 +1,4 @@
-.travel {
+.holder {
   background-image: url(../img/travel-bg.png);
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@
   }
 }
 
-.travel-slider {
+.holder-slider {
 
   &__head {
     background-repeat: no-repeat;
@@ -34,6 +34,20 @@
         right: 0;
         top: 0;
       }
+
+      .holder__star-list {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        li {
+          display: inline-block;
+          margin-left: -30px;
+        }
+        img {
+          position: static;
+        }
+      }
     }
   }
 
@@ -47,7 +61,7 @@
   }
 }
 
-.travel-slider {
+.holder-slider {
   &__info {
     display: flex;
     justify-content: space-around;
@@ -81,12 +95,13 @@
       padding-left: 40px;
       position: relative;
 
-      span {
+      .holder-picing__span {
         line-height: 36px;
         text-align: right;
         letter-spacing: 5.25px;
         opacity: 0.75;
         font-size: 14px;
+        font-weight: 400;
         position: absolute;
         bottom: -26px;
         right: 0;
@@ -94,4 +109,11 @@
     }
   }
 }
+
+
+.excellent {
+  padding-right: 260px !important;
+}
+
+
 
