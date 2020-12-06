@@ -1,5 +1,9 @@
 .holder {
-  background-image: url(../img/travel-bg.png);
+  background-image: url(../img/frangipani.png);
+
+  &.sleep {
+    background-image: url(../img/frangipani.png);
+  }
   background-position: bottom right;
   background-repeat: no-repeat;
 
@@ -24,10 +28,15 @@
     background-repeat: no-repeat;
     background-position: right center;
     margin-top: -230px;
+    background-size: contain;
     .descr__head {
       position: relative;
       padding-right: 78px;
 
+      &.descr__head-sleep {
+        padding-right: 260px;
+      }
+      
       img {
         padding-left: 20px;
         position: absolute;
@@ -39,11 +48,6 @@
         position: absolute;
         right: 0;
         top: 0;
-
-        li {
-          display: inline-block;
-          margin-left: -30px;
-        }
         img {
           position: static;
         }
@@ -111,9 +115,6 @@
 }
 
 
-.excellent {
-  padding-right: 260px !important;
-}
 
 
 

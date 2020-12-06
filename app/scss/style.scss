@@ -1,10 +1,14 @@
 @import "global";
-@import "header";
-@import "section-surf";
-@import "section-holder";
 @import "vars";
 @import "libs";
 @import "fonts";
+@import "media";
+@import "header";
+@import "section-surf";
+@import "section-holder";
+@import "section-shop";
+@import "footer";
+
 
 .slick-current {
   .dots-box {
@@ -12,4 +16,4 @@
   }
 }
 
-@import "media";
+
