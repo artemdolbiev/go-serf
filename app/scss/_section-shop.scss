@@ -9,17 +9,34 @@
 }
 
 .shop__slider {
-  padding-left: 132px;
+  
+  @include xlm-min {
+    padding-left: 132px;
+  }
+  @include xlm {
+    padding-left: 20px;
+  }
 
   &-inner {
-    display: flex;
+    @include xlm-min {
+      display: flex;
+    }
+    @include xlm {
+      display: block;
+    }
   }
 
   &-info {
-    max-width: 480px;
+    max-width: 100%;
     margin-right: 40px;
     width: 100%;
-    padding-top: 150px;
+    @include xlm-min {
+      padding-top: 150px;
+    }
+    @include xlm {
+      padding-top: 55px;
+      padding-bottom: 50px;
+    }
   }
 }
 
@@ -37,6 +54,9 @@
   font-size: 32px;
   line-height: 40px;
 
+  @include xl-xlm {
+    margin-bottom: 30px;
+  }
   sup {
     font-size: 18px;
   }
@@ -47,13 +67,35 @@
 }
 
 .shop__slider-content {
-  padding-left: 170px;
   display: flex;
   align-items: flex-end;
+
+  @include xl-min {
+    padding-left: 170px;
+  }
+  @include xl {
+    padding-left: 40px;
+  }
+  @media (max-width: 680px) {
+    display: block;
+  }
+
+  @include xs {
+    padding-left: 0;
+  }
 }
 
 .shop__extras {
-  padding-left: 150px;
+  @include md-min {
+    padding-left: 150px;
+  }
+  @include md {
+    padding-left: 75px;
+  }
+  @media (max-width: 680px) {
+    padding-left: 0;
+    padding-top: 35px;
+  }
 
   &-inner {
     display: flex;
@@ -68,7 +110,12 @@
 
   &-box {
     text-align: center;
-    margin-right: 57px;
+    @include xs-min {
+      margin-right: 57px;
+    }
+    @include xs {
+      margin-right: 30px;
+    }
   }
 
   &-image {
@@ -97,28 +144,43 @@
 
 .surfboard {
   position: relative;
+
   &-box {
     position: absolute;
 
     &__content {
       display: none;
       position: absolute;
-      width: 359px;
       font-weight: 800;
       font-size: 24px;
       line-height: 24px;
-      padding-left: 104px;
-      top: -15px;
-      left: 40px;
+      @include md-min {
+        width: 359px;
+        padding-left: 104px;
+        top: -15px;
+        left: 40px;
+      }
+      @include md {
+        width: 270px;
+        padding-left: 0px;
+        top: 35px;
+        left: 0;
+      }
 
       &::before {
-        content: "";
-        position: absolute;
-        width: 80px;
-        height: 1px;
-        background-color: #ffffff;
-        left: 0;
-        top: 50%;
+        @include md-min {
+          content: "";
+          position: absolute;
+          width: 80px;
+          height: 1px;
+          background-color: #ffffff;
+          left: 0;
+          top: 50%;
+        }
+
+        @include md {
+          display: none;
+        }
       }
     }
   }
@@ -144,10 +206,29 @@
 .surfboard__position--1 {
   right: 40px;
   top: 215px;
+  @media (max-width: 680px) {
+    left: 155px;
+    top: 215px;
+  }
+  @include xs {
+    left: 195px;
+    top: 215px;
+  }
+  .surfboard-box__content {
+    @include md {
+      left: -177px;
+    }
+  }
 }
 .surfboard__position--2 {
-  left: -6px;
-  top: 313px;
+  @include xs-min {
+    left: -6px;
+    top: 313px;
+  }
+  @include xs {
+    left: 3px;
+    top: 313px;
+  }
 }
 .surfboard__position--3 {
   bottom: 70px;
@@ -157,16 +238,28 @@
     padding-left: 0;
     padding-right: 104px;
     top: -15px;
-    left: -400px;
+    @include xlm-min {
+      left: -400px;
+    }
+    @include xlm {
+      left: 60px;
+    }
     &::before {
       content: "";
       position: absolute;
-      width: 80px;
       height: 1px;
       background-color: #ffffff;
-      left: auto;
-      right: 0;
       top: 50%;
+      @include xlm-min {
+        width: 80px;
+        left: auto;
+        right: 0;
+      }
+      @include xlm {
+        width: 20px;
+        left: -32px;
+        right: auto;
+      }
     }
   }
 }

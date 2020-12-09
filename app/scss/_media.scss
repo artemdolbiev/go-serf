@@ -17,8 +17,20 @@
   }
 }
 
+@mixin ul-xlm {
+  @media (max-width: $ul - 0.2) and (min-width: $xlm) {
+    @content;
+  }
+}
+
 @mixin ul-lg {
   @media (max-width: $ul - 0.2) and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin ul-lgm {
+  @media (max-width: $ul - 0.2) and (min-width: $lgm) {
     @content;
   }
 }
@@ -54,8 +66,20 @@
   }
 }
 
+@mixin xl-xlm {
+  @media (max-width: $xl - 0.2) and (min-width: $xlm) {
+    @content;
+  }
+}
+
 @mixin xl-lg {
   @media (max-width: $xl - 0.2) and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl-lgm {
+  @media (max-width: $xl - 0.2) and (min-width: $lgm) {
     @content;
   }
 }
@@ -77,6 +101,49 @@
     @content;
   }
 }
+
+/* xlm */
+@mixin xlm-min {
+  @media (min-width: $xlm) {
+    @content;
+  }
+}
+
+@mixin xlm {
+  @media (max-width: $xlm - 0.2) {
+    @content;
+  }
+}
+
+@mixin xlm-lg {
+  @media (max-width: $xlm - 0.2) and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xlm-lgm {
+  @media (max-width: $xlm - 0.2) and (min-width: $lgm) {
+    @content;
+  }
+}
+
+@mixin xlm-md {
+  @media (max-width: $xlm - 0.2) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin xlm-sm {
+  @media (max-width: $xlm - 0.2) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin xlm-xs {
+  @media (max-width: $xlm - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
 /* lg */
 @mixin lg-min {
   @media (min-width: $lg) {
@@ -86,6 +153,12 @@
 
 @mixin lg {
   @media (max-width: $lg - 0.2) {
+    @content;
+  }
+}
+
+@mixin lg-lgm {
+  @media (max-width: $lg - 0.2) and (min-width: $lgm) {
     @content;
   }
 }
@@ -104,6 +177,37 @@
 
 @mixin lg-xs {
   @media (max-width: $lg - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
+
+/* lgm */
+@mixin lgm-min {
+  @media (min-width: $lgm) {
+    @content;
+  }
+}
+
+@mixin lgm {
+  @media (max-width: $lgm - 0.2) {
+    @content;
+  }
+}
+
+@mixin lgm-md {
+  @media (max-width: $lgm - 0.2) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lgm-sm {
+  @media (max-width: $lgm - 0.2) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin lgm-xs {
+  @media (max-width: $lgm - 0.2) and (min-width: $xs) {
     @content;
   }
 }

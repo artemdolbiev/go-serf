@@ -1,8 +1,20 @@
 .holder {
-  background-image: url(../img/frangipani.png);
+  @include xs-min {
+    background-image: url(../img/travel-bg.png);
+  }
 
+  @include xs {
+    background-image: none;
+  }
   &.sleep {
     background-image: url(../img/frangipani.png);
+
+    @include sm-xs {
+      background-size: 150px 250px;
+    }
+    @include xs {
+      background-size: 90px 150px;
+    }
   }
   background-position: bottom right;
   background-repeat: no-repeat;
@@ -18,23 +30,49 @@
   &__head {
     background-repeat: no-repeat;
     background-position: top left;
-    min-height: 780px;
+
+    @include md-min {
+      min-height: 780px;
+    }
+    @include md {
+      min-height: 720px;
+    }
 
   }
 
   &__descr {
-    padding: 160px 0 0 132px;
     min-height: 320px;
     background-repeat: no-repeat;
-    background-position: right center;
     margin-top: -230px;
     background-size: contain;
+
+    @include xlm-min {
+      padding: 160px 0 0 132px;
+      background-position: right center;
+    }
+    @include xlm-lg {
+      padding: 160px 0 0 20px;
+      background-position: right center;
+    }
+    @include lg-sm {
+      padding: 160px 0 0 20px;
+      background-position: right -120px;
+    }
+    @include sm {
+      padding: 160px 0 0 20px;
+      background-image: none !important;
+    }
     .descr__head {
       position: relative;
       padding-right: 78px;
 
       &.descr__head-sleep {
-        padding-right: 260px;
+        @include xs-min {
+          padding-right: 260px;
+        }
+        @include xs {
+          padding-right: 0;
+        }
       }
       
       img {
@@ -45,11 +83,17 @@
       }
 
       .holder__star-list {
-        position: absolute;
-        right: 0;
-        top: 0;
+        @include xs-min {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        @include xs {
+          position: static;
+        }
         img {
           position: static;
+          margin-left: -10px;
         }
       }
     }
@@ -57,7 +101,12 @@
 
   &__subtitle {
     text-align: right;
-    padding: 132px 80px 0 0;
+    @include md-min {
+      padding: 132px 80px 0 0;
+    }
+    @include md {
+      padding: 100px 20px 0 0;
+    }
   }
 
   &__btn {
@@ -67,48 +116,104 @@
 
 .holder-slider {
   &__info {
-    display: flex;
-    justify-content: space-around;
-
-    &-item {
-      min-height: 200px;
-      margin-bottom: 66px;
-      position: relative;
+    @include lg-min {
+      display: flex;
+      justify-content: space-around;
+    }
+    @include lg {
+      display: block;
     }
 
+    &-item {
+      position: relative;
+      @include lg-min {
+        min-height: 200px;
+        margin-bottom: 66px;
+      }
+      @include lg {
+        min-height: auto;
+        margin-bottom: 25px;
+        padding-left: 20px;
+      }
+    }
+
+
     &-subtitle {
-      position: absolute;
       line-height: 22px;
-      text-align: right;
       letter-spacing: 8px;
       opacity: 0.5;
-      transform: rotate(-90deg);
       font-size: 18px;
       top: 97px;
       left: -97px;
-      width: 200px;
-      height: 0;
       white-space: nowrap;
       text-align: right;
+
+      @include lg-min {
+        position: absolute;
+        transform: rotate(-90deg);
+        height: 0;
+        text-align: right;
+        width: 200px;
+      }
+      @include lg {
+        position: static;
+        transform: rotate(0deg);
+        height: auto;
+        text-align: left;
+        width: auto;
+      }
     }
 
     &-title {
       font-size: 40px;
       line-height: 36px;
       font-weight: 800;
-      padding-left: 40px;
       position: relative;
+      @include lg-min {
+        padding-left: 40px;
+      }
+      @include lg {
+        padding-left: 0;
+        padding-bottom: 5px;
+      }
 
       .holder-picing__span {
         line-height: 36px;
-        text-align: right;
         letter-spacing: 5.25px;
         opacity: 0.75;
         font-size: 14px;
         font-weight: 400;
         position: absolute;
         bottom: -26px;
-        right: 0;
+
+        @include lg-min {
+          text-align: right;
+          right: 0;
+        }
+        @include lg {
+          text-align: left;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.holder {
+  .title {
+    span {
+      @include md {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.sleep {
+  .holder-slider {
+    &__descr {
+      @include lg {
+        background-position: right 10px;
       }
     }
   }

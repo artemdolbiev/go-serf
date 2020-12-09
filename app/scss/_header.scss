@@ -11,29 +11,29 @@
   }
 
   &__title {
+    font-weight: 800;
+    opacity: 0.07;
+    max-width: 467px;
+    position: absolute;
+    z-index: 4;
+
     @include ul-min {
-      font-weight: 800;
       font-size: 200px;
       line-height: 156px;
-      opacity: 0.07;
-      max-width: 467px;
-      position: absolute;
       top: 0;
       left: 0;
-      z-index: 4;
     }
 
-    @include ul {
-      font-weight: 800;
+     @include ul-sm {
       font-size: 130px;
       line-height: 108px;
-      opacity: 0.07;
-      max-width: 467px;
-      position: absolute;
       top: 20px;
       left: 60px;
-      z-index: 4;
     }
+    @include sm {
+      display: none;
+    }
+    
   }
   &__aside {
     position: absolute;
@@ -41,49 +41,80 @@
     left: 0;
     z-index: 5;
 
-    text-align: center;
+    @include xl-min {
+      height: 100vh;
+      text-align: center;
+      border-right: 1px solid rgba(#ffffff, 0.25);
+    }
 
-    border-right: 1px solid rgba(#ffffff, 0.25);
-    height: 100vh;
-    @include xl {
-      position: absolute;
+    @include xl-sm {
       text-align: left;
       border-right: none;
-      height: 100%;
+      height: 108px;
       display: flex;
+      background-color: rgba(#ffffff, 0.1);
+    }
+
+    @include sm {
+      display: block;
+      text-align: center;
+      padding-right: 0;
+      background-color: rgba(#ffffff, 0.1);
+      height: 100vh;
     }
   }
 
   &__date {
+    font-weight: 800;
+
+    span {
+      font-weight: 300;
+      line-height: 19px;
+      letter-spacing: 1.4px;
+      display: block;
+    }
+    
     @include ul-min {
-      font-weight: 800;
       font-size: 72px;
       line-height: 64px;
 
       span {
         padding-top: 15px;
-        font-weight: 300;
         font-size: 16px;
-        line-height: 19px;
-        letter-spacing: 1.4px;
         margin-bottom: 30px;
-        display: block;
       }
     }
-
-    @include ul {
-      font-weight: 800;
+    @include ul-xl {
       font-size: 60px;
       line-height: 64px;
 
       span {
         padding-top: 0;
-        font-weight: 300;
         font-size: 14px;
-        line-height: 19px;
-        letter-spacing: 1.4px;
         margin-bottom: 5px;
-        display: block;
+      }
+    }
+
+    @include xl-sm {
+      font-size: 60px;
+      padding: 15px;
+      line-height: 45px;
+
+      span {
+        padding-top: 0;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+    }
+
+    @include sm {
+      font-size: 50px;
+      padding: 0;
+
+      span {
+        padding-top: 0;
+        font-size: 12px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -94,9 +125,21 @@
       padding-bottom: 35px;
     }
 
-    @include ul {
+    @include ul-xl {
       padding-top: 15px;
       padding-bottom: 8px;
+    }
+
+    @include xl-lg {
+      padding: 33px 15px 15px;
+    }
+
+    @include lg-sm{
+      padding: 40px 15px 15px;
+    }
+
+    @include sm {
+      padding: 15px 0 5px;
     }
   }
 
@@ -119,6 +162,17 @@
       left: 0;
       top: 0;
     }
+    @include xl-min {
+      margin-top: 0;
+    }
+
+    @include xl-sm {
+      margin-top: 42px;
+    }
+    @include sm {
+      margin-top: 0;
+    }
+
   }
 
   &__map {
@@ -126,21 +180,47 @@
     right: 0;
     top: 0;
     z-index: 3;
+
+    @include xl-md {
+      svg {
+        width: 500px;
+        height: 250px;
+      }
+    }
+
+    @include md-sm{
+      svg {
+        width: 450px;
+        height: 220px;
+      }
+    }
+
+    @include sm {
+      svg {
+        width: 400px;
+        height: 200px;
+      }
+    }
   }
 
   &__arrows {
+    position: absolute;
+    z-index: 3;
     @include ul-min {
-      position: absolute;
       left: 210px;
       bottom: 30px;
-      z-index: 3;
     }
 
-    @include ul {
-      position: absolute;
+    @include ul-xl {
       left: 130px;
       bottom: 30px;
-      z-index: 3;
+    }
+    @include xl-lg {
+      left: 30px;
+      bottom: 30px;
+    }
+    @include lg {
+      display: none;
     }
   }
 }
@@ -148,11 +228,18 @@
 .slider-item {
 
   &__info {
-
     position: absolute;
     right: 80px;
     bottom: 116px;
     text-align: right;
+    @include lg-min {
+      right: 80px;
+      bottom: 116px;
+    }
+    @include lg {
+      right: 20px;
+      bottom: 20px;
+    }
 
     &-suptitle {
       margin-bottom: 5px;
@@ -160,65 +247,135 @@
 
     &-title {
       font-weight: 800;
-      font-size: 80px;
-      line-height: 86px;
-      margin-bottom: 48px;
+      @include xl-min {
+        font-size: 80px;
+        margin-bottom: 48px;
+        line-height: 86px;
+      }
+
+      @include xl-lg {
+        font-size: 65px;
+        margin-bottom: 48px;
+        line-height: 86px;
+      }
+
+      @include lg {
+        font-size: 55px;
+        margin-bottom: 20px;
+        line-height: 55px;
+      }
+
     }
 
     &-suptext {
-      margin-bottom: 8px;
+      @include lg-min {
+        margin-bottom: 8px;
+      }
+      @include lg {
+        margin-bottom: 5px;
+      }
     }
 
     &-text {
       font-weight: 800;
-      font-size: 40px;
-      line-height: 46px;
-      margin-bottom: 20px;
+      @include lg-min {
+        font-size: 40px;
+        line-height: 46px;
+        margin-bottom: 20px;
+      }
+
+      @include lg {
+        font-size: 30px;
+        line-height: 20px;
+        margin-bottom: 15px;
+      }
     }
   }
 }
 
 .slider-arrows {
   position: absolute;
-  top: 40px;
-  right: 80px;
   cursor: pointer;
   z-index: 4;
+  @include xl-min {
+    top: 40px;
+    right: 80px;
+  }
+  @include xl {
+    top: 20px;
+    right: 20px;
+  }
 }
 
 .slider-arrows__left {
-  right: 125px;
+  @include xl-min {
+    right: 125px;
+  }
+
+  @include xl {
+    right: 60px;
+  }
 }
 
 .slider-dotshead {
   float: right;
   position: absolute;
-  right: 50px;
-  bottom: 40px;
-  max-width: 920px;
   width: 100%;
   margin-top: -40px;
+  @include lg-min {
+    right: 50px;
+    bottom: 40px;
+    max-width: 920px;
+  }
+  @include lg-md {
+    right: 0;
+    left: 10px;
+    bottom: 5px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 .dots-box {
-  width: 200px;
   display: flex;
   justify-content: space-between;
   height: 28px;
   align-items: center;
   border-top: 4px solid #ffffff;
   padding-top: 6px;
+  
+  @include lg-min {
+    width: 200px;
+  }
+  @include lg {
+    width: 125px;
+  }
 
   &__number {
     font-weight: 800;
-    font-size: 24px;
     line-height: 34px;
+
+    @include lg-min {
+      font-size: 24px;
+    }
+    @include lg {
+      font-size: 18px;
+    }
   }
 
   &__name {
     font-weight: 300;
-    line-height: 19px;
     text-transform: capitalize;
+
+    @include lg-min {
+      line-height: 19px;
+    }
+    @include lg {
+      line-height: 18px;
+    }
   }
 }
 
@@ -227,27 +384,46 @@
     padding-top: 40px;
   }
 
-  @include ul {
+  @include ul-xl {
     padding-top: 10px;
   }
 
-  @include xl {
+  @include xl-lg {
     padding-top: 0;
+  }
+  @include lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    position: absolute;
+    padding-top: 15px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    z-index: 8;
+
+    &.active {
+      transform: translateX(0);
+    }
   }
 
   &__list {
     @include xl {
-       li {
-          display: inline-block;
+      li {
+        display: inline-block;
       }
 
-       a {
-         padding: 15px;
+      a {
+        padding: 15px;
+        text-align: center;
       }
     }
   }
 
-  
   a {
     span {
       display: block;
@@ -279,5 +455,42 @@
     img {
       width: 100px;
     }
+  }
+}
+
+@include lg {
+  .menu-btn {
+    display: none;
+    width: 55px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    position: absolute;
+    right: 20px;
+    top: 75px;
+    z-index: 7;
+    background-color: rgba(#ffffff, 0.1);
+
+    &__inner {
+      width: 40px;
+    }
+    &__line {
+      width: 40px;
+      height: 5px;
+      background-color: $green;
+
+      + .menu-btn__line {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+
+@include lg {
+  .menu-btn {
+    display: flex;
   }
 }

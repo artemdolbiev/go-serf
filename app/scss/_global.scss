@@ -35,18 +35,40 @@ li {
   margin: 0 auto;
 }
 .headline-left {
-  font-size: 22px;
-  line-height: 32px;
-  letter-spacing: 7.33333px;
   opacity: 0.5;
-  padding-left: 103px;
   position: relative;
   display: inline-block;
+  @include lg-min {
+    font-size: 22px;
+    line-height: 32px;
+    padding-left: 103px;
+    letter-spacing: 7.33333px;
+    &::before {
+      width: 80px;
+    }
+  }
+  @include lg-sm {
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 65px;
+    letter-spacing: 7.33333px;
+    &::before {
+      width: 50px;
+    }
+  }
+  @include sm {
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 65px;
+    letter-spacing: 2.33333px;
+    &::before {
+      width: 50px;
+    }
+  }
 
   &::before {
     content: "";
     position: absolute;
-    width: 80px;
     height: 1px;
     background-color: #ffffff;
     left: 0;
@@ -57,11 +79,24 @@ li {
 .title {
   span {
     font-weight: 800;
-    font-size: 200px;
     color: rgba(#ffffff, 0.02);
     position: relative;
     transform: translateX(-50px);
     display: inline-block;
+
+    @include md-min {
+      font-size: 200px;
+    }
+    @include md-xs {
+      font-size: 100px;
+      padding-bottom: 80px;
+      padding-left: 10px;
+    }
+    @include xs {
+      font-size: 87px;
+      padding-bottom: 80px;
+      padding-left: 20px;
+    }
   }
 
   h3 {
@@ -89,8 +124,14 @@ li {
 
   &__head {
     font-weight: 800;
-    font-size: 40px;
-    padding-right: 10px;
+    @include sm-min {
+      font-size: 40px;
+      padding-right: 10px;
+    }
+    @include sm {
+      font-size: 32px;
+      padding-right: 0;
+    }
     span {
       font-weight: 100;
     }
@@ -103,7 +144,12 @@ li {
 
   &__head {
     font-weight: 800;
-    font-size: 40px;
+    @include sm-min {
+      font-size: 40px;
+    }
+    @include sm {
+      font-size: 32px;
+    }
     span {
       font-weight: 100;
     }
@@ -111,29 +157,48 @@ li {
 }
 
 .headline-right {
-  font-size: 22px;
-  line-height: 32px;
   letter-spacing: 7.33333px;
   opacity: 0.5;
-  padding-right: 103px;
   position: relative;
   display: inline-block;
+
+  @include lg-min {
+    font-size: 22px;
+    line-height: 32px;
+    padding-right: 103px;
+  }
+  @include lg {
+    font-size: 16px;
+    line-height: 18px;
+    padding-right: 65px;
+  }
 
   &::before {
     content: "";
     position: absolute;
-    width: 80px;
     height: 1px;
     background-color: #ffffff;
     right: 0;
     top: 50%;
+
+    @include lg-min {
+      width: 80px;
+    }
+    @include lg {
+      width: 50px;
+    }
   }
 }
 
 .btn {
   font-weight: 800;
-  font-size: 40px;
   line-height: 36px;
+  @include md-min {
+    font-size: 40px;
+  }
+  @include md {
+    font-size: 30px;
+  }
 
   span {
     padding: 17px 57px 15px 17px;
@@ -166,12 +231,23 @@ li {
 }
 .surf,
 .holder {
-  padding: 160px 0 120px;
+  @include xlm-min {
+    padding: 160px 0 120px;
+  }
+  @include xlm {
+    padding: 70px 0 50px;
+  }
 }
 
 .holder {
-  padding-bottom: 265px;
   margin-bottom: 35px;
+
+  @include lg-min {
+    padding-bottom: 265px;
+  }
+  @include lg {
+    padding-bottom: 90px;
+  }
 }
 
 
@@ -227,12 +303,26 @@ input[type=number]
 
 .quantity-button.quantity-up {
   position: absolute;
-  right: 0;
+
+  @include lg-min {
+    right: 0;
+  }
+  @include lg {
+    right: auto;
+    left: 25px;
+  }
 }
 
 .quantity-button.quantity-down {
   position: absolute;
-  right: 25px;
+
+  @include lg-min {
+    right: 25px;
+  }
+  @include lg {
+    right: auto;
+
+  }
 }
 
 .star-list {
