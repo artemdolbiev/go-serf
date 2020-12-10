@@ -274,8 +274,6 @@ input[type=number]
 }
 
 .quantity input {
-  width: 47px;
-  height: 42px;
   display: block;
   border: none;
   background-color: transparent;
@@ -283,6 +281,16 @@ input[type=number]
   line-height: 36px;
   font-weight: 800;
   color: #ffffff;
+  @include lg-min {
+    width: 47px;
+    height: 42px;
+    font-size: 40px;
+  }
+  @include lg {
+    width: 55px;
+    height: 53px;
+    font-size: 36px;
+  }
 }
 
 .quantity input:focus {
@@ -315,6 +323,7 @@ input[type=number]
   @include lg {
     right: auto;
     left: 25px;
+    padding-top: 10px;
   }
 }
 
@@ -326,6 +335,7 @@ input[type=number]
   }
   @include lg {
     right: auto;
+    padding-top: 10px;
 
   }
 }
