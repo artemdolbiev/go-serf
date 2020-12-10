@@ -3,8 +3,8 @@ $(function(){
   $('.header__slider').slick({
     infinite: true,
     fade: true,
-    prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt=""></img>',
-    nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrows-right.svg" alt=""></img>',
+    prevArrow: '<img class="slider-arrows slider-arrows__left" src="app/img/arrows-left.svg" alt=""></img>',
+    nextArrow: '<img class="slider-arrows slider-arrows__right" src="app/img/arrows-right.svg" alt=""></img>',
     asNavFor: '.slider-dotshead',
   });
 
@@ -23,8 +23,8 @@ $(function(){
   $('.surf-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
-    prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt=""></img>',
-    nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrows-right.svg" alt=""></img>',
+    prevArrow: '<img class="slider-arrows slider-arrows__left" src="app/img/arrows-left.svg" alt=""></img>',
+    nextArrow: '<img class="slider-arrows slider-arrows__right" src="app/img/arrows-right.svg" alt=""></img>',
     asNavFor: '.slider-map',
     responsive: [
       {
@@ -96,13 +96,13 @@ $(function(){
   $('.holder__slider, .shop__slider').slick({
     infinite: true,
     fade: true,
-    prevArrow: '<img class="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt=""></img>',
-    nextArrow: '<img class="slider-arrows slider-arrows__right" src="img/arrows-right.svg" alt=""></img>',
+    prevArrow: '<img class="slider-arrows slider-arrows__left" src="app/img/arrows-left.svg" alt=""></img>',
+    nextArrow: '<img class="slider-arrows slider-arrows__right" src="app/img/arrows-right.svg" alt=""></img>',
   });
   
 
 
-  $('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="img/plus.svg" alt="plus"></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt="minus"></div></div>').insertAfter('.quantity input');
+  $('<div class="quantity-nav"><div class="quantity-button quantity-up"><img src="app/img/plus.svg" alt="plus"></div><div class="quantity-button quantity-down"><img src="img/minus.svg" alt="minus"></div></div>').insertAfter('.quantity input');
   $('.quantity').each(function() {
     var spinner = $(this),
       input = spinner.find('input[type="number"]'),

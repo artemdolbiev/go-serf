@@ -35,7 +35,7 @@ gulp.task('css', function(){
 });
 
 gulp.task('html', function(){
-  return gulp.src('app/*.html')
+  return gulp.src('./*.html')
   .pipe(browserSync.reload({stream: true}))
 });
 
@@ -58,13 +58,13 @@ gulp.task('js', function(){
 gulp.task('browser-sync', function() {
   browserSync.init({
       server: {
-          baseDir: "app/"
+          baseDir: "./",
       }
   });
 });
 
 gulp.task('export', function(){
-  let buildHtml = gulp.src('app/**/*.html')
+  let buildHtml = gulp.src('./*.html')
     .pipe(gulp.dest('dist'));
 
   let BuildCss = gulp.src('app/css/**/*.css')
@@ -82,7 +82,7 @@ gulp.task('export', function(){
 
 gulp.task('watch', function(){
   gulp.watch('app/scss/**/*.scss', gulp.parallel('scss'));
-  gulp.watch('app/*.html', gulp.parallel('html'))
+  gulp.watch('./*.html', gulp.parallel('html'))
   gulp.watch('app/js/*.js', gulp.parallel('script'))
 });
 
